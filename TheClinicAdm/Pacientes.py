@@ -19,7 +19,7 @@ class Pacientes:
     def turno_paciente(self):
         return self._turno_paciente
 
-    @id_paciente.setter
+    @turno_paciente.setter
     def turno_paciente(self, turno_paciente):
         self._turno_paciente = turno_paciente
 
@@ -27,6 +27,6 @@ class Pacientes:
     def clinico_paciente(self):
         return self._clinico_paciente
 
-    @id_paciente.setter
+    @clinico_paciente.setter
     def clinico_paciente(self, clinico_paciente):
         self._clinico_paciente = clinico_paciente
