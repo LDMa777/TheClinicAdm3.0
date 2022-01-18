@@ -50,3 +50,7 @@ class Clinicos:
     @esp_clinico.setter
     def esp_clinico(self, esp_clinico):
         self._esp_clinico = esp_clinico
+
+
+if __name__ == '__name__':
+    print(__name__)

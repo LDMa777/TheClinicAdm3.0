@@ -30,3 +30,7 @@ class Pacientes:
     @clinico_paciente.setter
     def clinico_paciente(self, clinico_paciente):
         self._clinico_paciente = clinico_paciente
+
+
+if __name__ == '__name__':
+    print(__name__)

@@ -23,26 +23,16 @@ class Usuarios:
         self._pagos_usuario = pagos_usuario
         self._permiso_usuario = permiso_usuario
 
-    def __str__(self):
-        return f'[ID: {self._id_usuario},Nombre: {self._nombre_usuario},Apellido: {self._apellido_usuario},' \
-               f'Edad: {self._edad_usuario},Dni: {self._dni_usuario},Email: {self._email_usuario}, ' \
-               f'Contraseña: {self._contraseña_usuario},Domicilio: {self._domicilio_usuario}, ' \
-               f'F.Nacimiento: {self._fecha_nac_usuario},Provincia: {self._provincia_usuario},' \
-               f'Barrio: {self._barrio_usuario},Notas: {self._notas_usuario},O.Social: {self._obra_soc_usuario}, ' \
-               f'Nro.Analisis: {self._analisis_usuario},Nro.Clinico: {self.clinico_usuario},' \
-               f'Nro.Paciente: {self._paciente_usuario},Nro.Pago: {self._pagos_usuario},' \
-               f'Nro.permiso: {self._permiso_usuario} ]'
-
     @property
     def id_usuario(self):
         return self._id_usuario
 
     @id_usuario.setter
     def id_usuario(self, id_usuario):
-        if ('a' <= id_usuario <= 'z') or ('A' <= id_usuario <= 'Z'):
-            print("Lo Siento Papa, Inyeccioname Esta!!! :D")
-        else:
+        if self._validar_letras(id_usuario):
             self._id_usuario = id_usuario
+        else:
+            print("Lo Siento Papa, Inyeccioname Esta!!! :D")
 
     @property
     def nombre_usuario(self):
@@ -179,6 +169,19 @@ class Usuarios:
     @permiso_usuario.setter
     def permiso_usuario(self, permiso_usuario):
         self._permiso_usuario = permiso_usuario
+
+    def __str__(self):
+        return f'[ID: {self._id_usuario},Nombre: {self._nombre_usuario},Apellido: {self._apellido_usuario},' \
+               f'Edad: {self._edad_usuario},Dni: {self._dni_usuario},Email: {self._email_usuario}, ' \
+               f'Contraseña: {self._contraseña_usuario},Domicilio: {self._domicilio_usuario}, ' \
+               f'F.Nacimiento: {self._fecha_nac_usuario},Provincia: {self._provincia_usuario},' \
+               f'Barrio: {self._barrio_usuario},Notas: {self._notas_usuario},O.Social: {self._obra_soc_usuario}, ' \
+               f'Nro.Analisis: {self._analisis_usuario},Nro.Clinico: {self.clinico_usuario},' \
+               f'Nro.Paciente: {self._paciente_usuario},Nro.Pago: {self._pagos_usuario},' \
+               f'Nro.permiso: {self._permiso_usuario} ]'
+
+    def _validar_letras(self, letra):
+        return True if ('a' <= letra <= 'z') or ('A' <= letra <= 'Z') else False
 
 
 if __name__ == '__name__':

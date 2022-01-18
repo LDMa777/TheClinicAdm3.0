@@ -21,3 +21,7 @@ class Horarios:
     @tiempo_horario.setter
     def tiempo_horario(self, tiempo_horario):
         self._tiempo_horario = tiempo_horario
+
+
+if __name__ == '__name__':
+    print(__name__)

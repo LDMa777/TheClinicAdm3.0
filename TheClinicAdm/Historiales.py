@@ -70,3 +70,7 @@ class Historiales:
     @diagnostico_historial.setter
     def diagnostico_historial(self, diagnostico_historial):
         self._diagnostico_historial = diagnostico_historial
+
+
+if __name__ == '__name__':
+    print(__name__)

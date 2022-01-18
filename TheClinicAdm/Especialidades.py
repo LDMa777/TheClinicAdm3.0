@@ -22,3 +22,6 @@ class Especialidades:
     def nombre_especialidad(self, nombre_especialidad):
         self._nombre_especialidad = nombre_especialidad
 
+
+if __name__ == '__name__':
+    print(__name__)

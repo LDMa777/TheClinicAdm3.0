@@ -49,3 +49,7 @@ class Analisis:
     @resultados_analisis.setter
     def resultados_analisis(self, resultados_analisis):
         self._resultados_analisis = resultados_analisis
+
+
+if __name__ == '__name__':
+    print(__name__)
