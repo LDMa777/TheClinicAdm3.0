@@ -13,6 +13,7 @@ class Recibos:
     @property
     def id_recibo(self):
         return self._id_recibo
+
     @id_recibo.setter
     def id_recibo(self, id_recibo):
         self._id_recibo = id_recibo
@@ -50,5 +51,6 @@ class Recibos:
         self._liqui_recibo = liqui_recibo
 
 
-
+if __name__ == '__name__':
+    print(__name__)
 

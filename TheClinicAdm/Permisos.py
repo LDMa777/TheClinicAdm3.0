@@ -21,3 +21,7 @@ class Permisos:
     @nombre_permiso.setter
     def nombre_permiso(self, nombre_permiso):
         self._nombre_permiso = nombre_permiso
+
+
+if __name__ == '__name__':
+    print(__name__)

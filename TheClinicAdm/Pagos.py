@@ -8,8 +8,8 @@ class Pagos:
         self._dni_pago = dni_pago
 
     def __str__(self):
-        f'[ID:{self._id_pago},Fecha:{self._fecha_pago},Descripcion:{self._descripcion_pago},' \
-        f'Cantidad:{self._cantidad_pago},Liquidacion:{self._liqui_pago},DNI:{self._dni_pago}]'
+        return f'[ID:{self._id_pago},Fecha:{self._fecha_pago},Descripcion:{self._descripcion_pago},' \
+               f'Cantidad:{self._cantidad_pago},Liquidacion:{self._liqui_pago},DNI:{self._dni_pago}]'
 
     @property
     def id_pago(self):
@@ -52,8 +52,13 @@ class Pagos:
         self._liqui_pago = liqui_pago
 
     @property
-    def liqui_pago(self):
-        return self._liqui_pago
+    def dni_pago(self):
+        return self._dni_pago
 
+    @dni_pago.setter
     def dni_pago(self, dni_pago):
         self._dni_pago = dni_pago
+
+
+if __name__ == '__name__':
+    print(__name__)
