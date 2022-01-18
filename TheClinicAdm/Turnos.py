@@ -58,3 +58,7 @@ class Turnos:
     @horario_turno.setter
     def horario_turno(self, horario_turno):
         self._horario_turno = horario_turno
+
+
+if __name__ == '__name__':
+    print(__name__)

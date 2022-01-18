@@ -36,9 +36,13 @@ class Usuarios:
     @property
     def id_usuario(self):
         return self._id_usuario
+
     @id_usuario.setter
     def id_usuario(self, id_usuario):
-        self._id_usuario = id_usuario
+        if ('a' <= id_usuario <= 'z') or ('A' <= id_usuario <= 'Z'):
+            print("Lo Siento Papa, Inyeccioname Esta!!! :D")
+        else:
+            self._id_usuario = id_usuario
 
     @property
     def nombre_usuario(self):
@@ -92,9 +96,9 @@ class Usuarios:
     def domicilio_usuario(self):
         return self._domicilio_usuario
 
-    @contraseña_usuario.setter
+    @domicilio_usuario.setter
     def domicilio_usuario(self, domicilio_usuario):
-        self._domicilio_usuario= domicilio_usuario
+        self._domicilio_usuario = domicilio_usuario
 
     @property
     def fecha_nac_usuario(self):
@@ -166,7 +170,7 @@ class Usuarios:
 
     @pagos_usuario.setter
     def pagos_usuario(self, pagos_usuario):
-        self._pagos_usuario= pagos_usuario
+        self._pagos_usuario = pagos_usuario
 
     @property
     def permiso_usuario(self):
@@ -177,3 +181,5 @@ class Usuarios:
         self._permiso_usuario = permiso_usuario
 
 
+if __name__ == '__name__':
+    print(__name__)
