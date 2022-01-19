@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Turnos:
     def __init__(self, id_turno, fecha_turno, clinico_turno, paciente_turno, comentarios_turno, horario_turno):
         self._id_turno = id_turno
@@ -7,17 +10,16 @@ class Turnos:
         self._comentarios_turno = comentarios_turno
         self._horario_turno = horario_turno
 
-    def __str__(self):
-        return f'[ID:{self._id_turno},Fecha:{self._fecha_turno},Clinico:{self._clinico_turno},' \
-               f'Paciente:{self._paciente_turno},Comentarios:{self._comentarios_turno},Horario:{self._horario_turno}]'
-
     @property
     def id_turno(self):
         return self._id_turno
 
     @id_turno.setter
     def id_turno(self, id_turno):
-        self._id_turno = id_turno
+        if Usuarios._validar_inte(self, id_turno):
+            self._id_turno = id_turno
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def fecha_turno(self):
@@ -58,6 +60,10 @@ class Turnos:
     @horario_turno.setter
     def horario_turno(self, horario_turno):
         self._horario_turno = horario_turno
+
+    def __str__(self):
+        return f'[ID:{self._id_turno},Fecha:{self._fecha_turno},Clinico:{self._clinico_turno},' \
+               f'Paciente:{self._paciente_turno},Comentarios:{self._comentarios_turno},Horario:{self._horario_turno}]'
 
 
 if __name__ == '__name__':

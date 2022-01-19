@@ -29,10 +29,10 @@ class Usuarios:
 
     @id_usuario.setter
     def id_usuario(self, id_usuario):
-        if self._validar_letras(id_usuario):
+        if self._validar_char(id_usuario):
             self._id_usuario = id_usuario
         else:
-            print("Lo Siento Papa, Inyeccioname Esta!!! :D")
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def nombre_usuario(self):
@@ -40,7 +40,10 @@ class Usuarios:
 
     @nombre_usuario.setter
     def nombre_usuario(self, nombre_usuario):
-        self._nombre_usuario = nombre_usuario
+        if self._validar_inte(nombre_usuario):
+            self._nombre_usuario = nombre_usuario
+        else:
+            print("Error Ingreso Nombre, No Tiene Que Ser Un Numero!!! :D")
 
     @property
     def apellido_usuario(self):
@@ -48,7 +51,10 @@ class Usuarios:
 
     @apellido_usuario.setter
     def apellido_usuario(self, apellido_usuario):
-        self._apellido_usuario = apellido_usuario
+        if self._validar_inte(apellido_usuario):
+            self._apellido_usuario = apellido_usuario
+        else:
+            print("Error Ingreso Nombre, No Tiene Que Ser Un Numero!!! :D")
 
     @property
     def edad_usuario(self):
@@ -56,7 +62,10 @@ class Usuarios:
 
     @edad_usuario.setter
     def edad_usuario(self, edad_usuario):
-        self._edad_usuario = edad_usuario
+        if self._validar_inte(edad_usuario):
+            self._edad_usuario = edad_usuario
+        else:
+            print("Error Ingreso Edad, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def dni_usuario(self):
@@ -64,7 +73,10 @@ class Usuarios:
 
     @dni_usuario.setter
     def dni_usuario(self, dni_usuario):
-        self._dni_usuario = dni_usuario
+        if self._validar_inte(dni_usuario):
+            self._dni_usuario = dni_usuario
+        else:
+            print("Error Ingreso DNI, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def email_usuario(self):
@@ -136,7 +148,10 @@ class Usuarios:
 
     @analisis_usuario.setter
     def analisis_usuario(self, analisis_usuario):
-        self._analisis_usuario = analisis_usuario
+        if self._validar_char(analisis_usuario):
+            self._analisis_usuario = analisis_usuario
+        else:
+            print("Error Ingreso De Nro.Analisis, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def clinico_usuario(self):
@@ -144,7 +159,10 @@ class Usuarios:
 
     @clinico_usuario.setter
     def clinico_usuario(self, clinico_usuario):
-        self._clinico_usuario = clinico_usuario
+        if self._validar_char(clinico_usuario):
+            self._clinico_usuario = clinico_usuario
+        else:
+            print("Error Ingreso Nro.Clinico, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def paciente_usuario(self):
@@ -152,7 +170,10 @@ class Usuarios:
 
     @paciente_usuario.setter
     def paciente_usuario(self, paciente_usuario):
-        self._paciente_usuario = paciente_usuario
+        if self._validar_char(paciente_usuario):
+            self._paciente_usuario = paciente_usuario
+        else:
+            print("Error Ingreso Nro.Paciente, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def pagos_usuario(self):
@@ -160,7 +181,10 @@ class Usuarios:
 
     @pagos_usuario.setter
     def pagos_usuario(self, pagos_usuario):
-        self._pagos_usuario = pagos_usuario
+        if self._validar_char(pagos_usuario):
+            self._pagos_usuario = pagos_usuario
+        else:
+            print("Error Ingreso Nro.Pago, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def permiso_usuario(self):
@@ -168,7 +192,10 @@ class Usuarios:
 
     @permiso_usuario.setter
     def permiso_usuario(self, permiso_usuario):
-        self._permiso_usuario = permiso_usuario
+        if self._validar_char(permiso_usuario):
+            self._permiso_usuario = permiso_usuario
+        else:
+            print("Error Ingreso Nro.Permiso, No Tiene Que Ser Un Caracter!!! :D")
 
     def __str__(self):
         return f'[ID: {self._id_usuario},Nombre: {self._nombre_usuario},Apellido: {self._apellido_usuario},' \
@@ -180,8 +207,11 @@ class Usuarios:
                f'Nro.Paciente: {self._paciente_usuario},Nro.Pago: {self._pagos_usuario},' \
                f'Nro.permiso: {self._permiso_usuario} ]'
 
-    def _validar_letras(self, letra):
-        return True if ('a' <= letra <= 'z') or ('A' <= letra <= 'Z') else False
+    def _validar_char(self, char):
+        return True if ('a' <= char <= 'z') or ('A' <= char <= 'Z') else False
+
+    def _validar_inte(self, inte):
+        return True if (0 <= inte <= 0) else False
 
 
 if __name__ == '__name__':
