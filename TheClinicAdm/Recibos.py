@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Recibos:
     def __init__(self, id_recibo, fecha_recibo, descripcion_recibo, clinico_recibo, liqui_recibo):
         self._id_recibo = id_recibo
@@ -16,7 +19,10 @@ class Recibos:
 
     @id_recibo.setter
     def id_recibo(self, id_recibo):
-        self._id_recibo = id_recibo
+        if Usuarios._validar_inte(self, id_recibo):
+            self._id_recibo = id_recibo
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def fecha_recibo(self):
@@ -40,7 +46,10 @@ class Recibos:
 
     @clinico_recibo.setter
     def clinico_recibo(self, clinico_recibo):
-        self._clinico_recibo = clinico_recibo
+        if Usuarios._validar_inte(self, clinico_recibo):
+            self._clinico_recibo = clinico_recibo
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def liqui_recibo(self):
@@ -48,9 +57,11 @@ class Recibos:
 
     @liqui_recibo.setter
     def liqui_recibo(self, liqui_recibo):
-        self._liqui_recibo = liqui_recibo
+        if Usuarios._validar_inte(self, liqui_recibo):
+            self._liqui_recibo = liqui_recibo
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
 
 if __name__ == '__name__':
     print(__name__)
-

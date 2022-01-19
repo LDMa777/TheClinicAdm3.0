@@ -12,7 +12,10 @@ class Permisos:
 
     @id_permiso.setter
     def id_permiso(self, id_permiso):
-        self._id_permiso = id_permiso
+        if Usuarios._validar_inte(self, id_permiso):
+            self._id_permiso = id_permiso
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def nombre_permiso(self):
@@ -20,7 +23,10 @@ class Permisos:
 
     @nombre_permiso.setter
     def nombre_permiso(self, nombre_permiso):
-        self._nombre_permiso = nombre_permiso
+        if Usuarios._validar_char(self, nombre_permiso):
+            self._nombre_permiso = nombre_permiso
+        else:
+            print("Error Ingreso Nombre, No Tiene Que Ser Un Numero!!! :D")
 
 
 if __name__ == '__name__':

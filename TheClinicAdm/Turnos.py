@@ -35,7 +35,10 @@ class Turnos:
 
     @clinico_turno.setter
     def clinico_turno(self, clinico_turno):
-        self._clinico_turno = clinico_turno
+        if Usuarios._validar_inte(self, clinico_turno):
+            self._clinico_turno = clinico_turno
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def paciente_turno(self):
@@ -43,7 +46,10 @@ class Turnos:
 
     @paciente_turno.setter
     def paciente_turno(self, paciente_turno):
-        self._paciente_turno = paciente_turno
+        if Usuarios._validar_inte(self, paciente_turno):
+            self._paciente_turno = paciente_turno
+        else:
+            print("Error Ingreso Nro.ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def comentarios_turno(self):
