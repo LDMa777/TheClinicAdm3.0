@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Horarios:
     def __init__(self, id_horario, tiempo_horario):
         self._id_horario = id_horario
@@ -12,7 +15,10 @@ class Horarios:
 
     @id_horario.setter
     def id_horario(self, id_horario):
-        self._id_horario = id_horario
+        if Usuarios._validar_inte(self, id_horario):
+            self._id_horario = id_horario
+        else:
+            print("Error Ingreso ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def tiempo_horario(self):

@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Pagos:
     def __init__(self, id_pago, fecha_pago, descripcion_pago, cantidad_pago, liqui_pago, dni_pago):
         self._id_pago = id_pago
@@ -17,7 +20,10 @@ class Pagos:
 
     @id_pago.setter
     def id_pago(self, id_pago):
-        self._id_pago = id_pago
+        if Usuarios._validar_inte(self, id_pago):
+            self._id_pago = id_pago
+        else:
+            print("Error Ingreso ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def fecha_pago(self):
@@ -41,7 +47,10 @@ class Pagos:
 
     @cantidad_pago.setter
     def cantidad_pago(self, cantidad_pago):
-        self._cantidad_pago = cantidad_pago
+        if Usuarios._validar_inte(self, cantidad_pago):
+            self._cantidad_pago = cantidad_pago
+        else:
+            print("Error Ingreso De Cantidad, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def liqui_pago(self):
@@ -49,7 +58,10 @@ class Pagos:
 
     @liqui_pago.setter
     def liqui_pago(self, liqui_pago):
-        self._liqui_pago = liqui_pago
+        if Usuarios._validar_inte(self, liqui_pago):
+            self._liqui_pago = liqui_pago
+        else:
+            print("Error Ingreso Liquidacion, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def dni_pago(self):

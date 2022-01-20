@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Historiales:
     def __init__(self, id_historial, turno_historial, clinico_historial, paciente_historial, fecha_historial,
                  observacion_historial, diagnostico_historial):
@@ -10,18 +13,16 @@ class Historiales:
         self._observacion_historial = observacion_historial
         self._diagnostico_historial = diagnostico_historial
 
-    def __str__(self):
-        return f'[ID:{self._id_historial},Turno:{self._turno_historial},Clinico:{self._clinico_historial},' \
-               f'Paciente:{self._paciente_historial},Fecha:{self._fecha_historial}],' \
-               f'Observaciones:{self._observacion_historial},Diagnostico:{self._diagnostico_historial}'
-
     @property
     def id_historial(self):
         return self._id_historial
 
     @id_historial.setter
     def id_historial(self, id_historial):
-        self._id_historial = id_historial
+        if Usuarios._validar_inte(self, id_historial):
+            self._id_historial = id_historial
+        else:
+            print("Error Ingreso ID, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def turno_historial(self):
@@ -29,7 +30,10 @@ class Historiales:
 
     @turno_historial.setter
     def turno_historial(self, turno_historial):
-        self._turno_historial = turno_historial
+        if Usuarios._validar_inte(self, turno_historial):
+            self._turno_historial = turno_historial
+        else:
+            print("Error Ingreso Nro.Turno, No Tiene Que Ser Un Caracter!!! :D")
 
     @property
     def clinico_historial(self):
@@ -70,6 +74,11 @@ class Historiales:
     @diagnostico_historial.setter
     def diagnostico_historial(self, diagnostico_historial):
         self._diagnostico_historial = diagnostico_historial
+
+    def __str__(self):
+        return f'[ID:{self._id_historial},Turno:{self._turno_historial},Clinico:{self._clinico_historial},' \
+               f'Paciente:{self._paciente_historial},Fecha:{self._fecha_historial}],' \
+               f'Observaciones:{self._observacion_historial},Diagnostico:{self._diagnostico_historial}'
 
 
 if __name__ == '__name__':

@@ -1,3 +1,6 @@
+from Usuarios import Usuarios
+
+
 class Permisos:
     def __init__(self, id_permiso, nombre_permiso):
         self._id_permiso = id_permiso
